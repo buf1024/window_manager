@@ -160,6 +160,13 @@ class WindowManager {
     await _channel.invokeMethod('close');
   }
 
+  Future<void> forceClose() async {
+    await _channel.invokeMethod('forceClose');
+  }
+  Future<void> orderFront() async {
+    await _channel.invokeMethod('orderFront');
+  }
+
   /// Check if is intercepting the native close signal.
   Future<bool> isPreventClose() async {
     return await _channel.invokeMethod('isPreventClose');

@@ -93,6 +93,15 @@ public class WindowManager: NSObject, NSWindowDelegate {
     public func destroy() {
         NSApp.terminate(nil)
     }
+    public func orderFront() {
+        mainWindow.orderFrontRegardless()
+        NSApp.activate(ignoringOtherApps: true)
+    }
+
+    public func forceClose() {
+        mainWindow.isReleasedWhenClosed = true
+        mainWindow.close()
+    }
     
     public func close() {
         mainWindow.performClose(nil)

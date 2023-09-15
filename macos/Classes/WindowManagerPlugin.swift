@@ -60,6 +60,14 @@ public class WindowManagerPlugin: NSObject, FlutterPlugin {
             windowManager.destroy()
             result(true)
             break
+        case "forceClose":
+            windowManager.forceClose()
+            result(true)
+            break
+        case "orderFront":
+            windowManager.orderFront()
+            result(true)
+            break
         case "close":
             windowManager.close()
             result(true)
